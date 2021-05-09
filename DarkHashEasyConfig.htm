@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DarkHash Easy-Config v1.3</title>
+</head>
+<body style="background-color:#cccccc;">
+
+<br>
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="center" width="800px"><b>DarkHash Easy-Config v1.3</b></th>
+	</tr>
+	<tr>
+		<td align="center">Switch up your mining!</td>
+	</tr>
+	<tr>
+		<td align="center">-</td>
+	</tr>
+	<tr>
+		<td><a href="https://github.com/Kaoulombre/DarkHash">DarkHash</a> is an automated mining assistant for use with the <a href="https://darkfibermines.com/">Dark Fiber Mines</a> pool.</td>
+	</tr>
+	<tr>
+		<td>It allows you to mine a multitude of coins between given intervals with automatic stop-and-start functions.</td>
+	</tr>
+	<tr>
+		<td>This version of DarkHash Easy-Config is for <b>DarkHash v1.3</b></td>
+	</tr>
+	<tr>
+		<td align="center">-</td>
+	</tr>
+	<tr>
+		<td>This one-time tool allows you to easily create your initial DarkHash configuration without the need to individually modify the darkhash.bat settings.</td>
+	</tr>
+	<tr>
+		<td>Simply complete the below tables and copy/paste the output beneath into config.bat.</td>
+	</tr>
+	<tr>
+		<td align="center">-</td>
+	</tr>
+	<tr>
+		<td><b>Standard Miner(s):</b></td>
+	</tr>
+	<tr>
+		<td>You must have the following miner(s) in your DarkHash main directory:</td>
+	</tr>
+	<tr>
+		<td>miner.exe (Gminer)</td>
+	</tr>
+	<tr>
+		<td align="center">-</td>
+	</tr>
+	<tr>
+		<td><b>Additional Miner(s):</b></td>
+	</tr>
+	<tr>
+		<td>You may require the following miner(s) in your DarkHash main directory:</td>
+	</tr>
+	<tr>
+		<td>lolMiner.exe (lolMiner) - if mining BEAM</td>
+	</tr>
+	<tr>
+		<td>miniZ.exe (MiniZ) - if mining BEAM with 4GB NVIDIA card(s)</td>
+	</tr>
+	<tr>
+		<td>teamredminer.exe (Team Red Miner) - if mining Ravencoin using AMD GPU(s)</td>
+	</tr>
+	<tr>
+		<td>t-rex.exe (T-Rex) - if mining Ravencoin using NVIDIA GPU(s)</td>
+	</tr>
+	<tr>
+		<td align="center">-</td>
+	</tr>
+	<tr>
+		<td><b>Starting DarkHash</b></td>
+	</tr>
+	<tr>
+		<td>Once configured, execute darkhash.bat to start mining.</td>
+	</tr>
+</table>
+<br>
+
+
+
+
+<!-- Worker Setup Table -->
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="left">Worker Name Setup</th>
+		<th aligh="left">(Plain text only, no spaces or special characers)</th>
+	</tr>
+	<tr>
+		<td>Desired Worker Name:</td>
+		<td><input class="worker" type="text" value="MyMiningRig" style="width: 200px;"/></td>
+	</tr>
+</table>
+<br>
+
+
+
+<!-- AMD Card Setup -->
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="left">AMD Card Setup</th>
+		<th aligh="left"></th>
+	</tr>
+	<tr>
+		<td>Are you mining with AMD GPUs? <select class="amduser" name="amduser" id="amduser"><option value="NO">NO</option><option value="YES">YES</option></td>
+	</tr>
+	<tr>
+		<td>Note: If yes, be sure you have teamredminer.ext (Team Red Miner) in your DarkHash-main directory!</td>
+	</tr>
+</table>
+<br>
+
+
+
+
+<!-- NVIDIA Card Setup -->
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="left">NVIDIA Card Setup - (BEAM mining only)</th>
+		<th aligh="left"></th>
+	</tr>
+	<tr>
+		<td>Are you mining BEAM with 4GB/4GO NVIDIA card(s)? <select class="nvidia4gb" name="nvidia4gb" id="nvidia4gb"><option value="NO">NO</option><option value="YES">YES</option></td>
+	</tr>
+	<tr>
+		<td>Note: If mining BEAM, be sure you have miniZ.exe (MiniZ) in your DarkHash-main directory!</td>
+	</tr>
+</table>
+<br>
+
+
+
+
+<!-- Timer Setup Table -->
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="left">Default Mine Time Setup</th>
+	</tr>
+	<tr>
+		<td>Switch cryptocurrency being mined every <input class="delay" type="number" value="1" style="width: 50px;"/> hour(s).</td>
+	</tr>
+	<tr>
+		<td>This value will be used for all coins set to mine, unless a Mine Time Override is specified in <b>Wallet Setup</b> for the respective coin.</td>
+	</tr>
+</table>
+<br>
+
+
+
+
+<!-- Wallet Input and Mining Selection Table -->
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="left">Wallet Setup</th>
+		<th align="left"></th>
+		<th align="left"></th>
+		<th align="left"></th>
+		<th align="left"></th>
+	</tr>
+	<tr>
+		<th align="left">Cryptocurrency</th>
+		<th align="left">Coin</th>
+		<th align="left">Wallet (Leave blank if no wallet held)</th>
+		<th align="left">Mine?</th>
+		<th align="left">Mine Time Override</th>
+		<th align="left">Notes</th>
+	</tr>
+	<tr>
+		<td>Beam</td>
+		<td>BEAM</td>
+		<td><input class="beamwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minebeam" name="minebeam" id="minebeam"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimebeam" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td>Uses lolMiner. Uses miniZ if using 4GB NVIDIA card(s)</td>
+	</tr>
+	<tr>
+		<td>BitcoinZ</td>
+		<td>BTCZ</td>
+		<td><input class="bitcoinzwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minebitcoinz" name="minebitcoinz" id="minebitcoinz"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimebitcoinz" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Bitzec</td>
+		<td>BZC</td>
+		<td><input class="bitzecwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minebitzec" name="minebitzec" id="minebitzec"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimebitzec" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td>Not yet supported by DarkHash</td>
+	</tr>
+	<tr>
+		<td>BZEdge</td>
+		<td>BZE</td>
+		<td><input class="bzedgewallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minebzedge" name="minebzedge" id="minebzedge"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimebzedge" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Zelcash FLUX</td>
+		<td>FLUX</td>
+		<td><input class="fluxwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="mineflux" name="mineflux" id="mineflux"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimeflux" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Foxdcoin</td>
+		<td>FOXD</td>
+		<td><input class="foxdwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minefoxdcoin" name="minefoxdcoin" id="minefoxdcoin"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimefoxdcoin" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td>Uses T-Rex version 0.19.14 or lower</td>
+	</tr>
+	<tr>
+		<td>LitecoinZ</td>
+		<td>LTZ</td>
+		<td><input class="litecoinzwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minelitecoinz" name="minelitecoinz" id="minelitecoinz"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimelitecoinz" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Ravencoin</td>
+		<td>RVN</td>
+		<td><input class="ravenwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="mineravencoin" name="mineravencoin" id="mineravencoin"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimeravencoin" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td>Uses T-Rex if GPU is NVIDIA. Uses Team Red Miner if GPU is AMD</td>
+	</tr>
+	<tr>
+		<td>SpaceCoin</td>
+		<td>SPACE</td>
+		<td><input class="spacewallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minespacecoin" name="minespacecoin" id="minespacecoin"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimespacecoin" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Vidulum</td>
+		<td>VDL</td>
+		<td><input class="vidulumwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minevidulum" name="minevidulum" id="minevidulum"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimevidulum" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>SnowGem/TENT</td>
+		<td>XSG</td>
+		<td><input class="tentwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minetent" name="minetent" id="minetent"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimetent" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>YCash</td>
+		<td>YEC</td>
+		<td><input class="ycashwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="mineycash" name="mineycash" id="mineycash"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimeycash" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>ZClassic</td>
+		<td>ZCL</td>
+		<td><input class="zclassicwallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minezclassic" name="minezclassic" id="minezclassic"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimezclassic" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td>Not yet supported by DarkHash</td>
+	</tr>
+	<tr>
+		<td>Zero</td>
+		<td>ZER</td>
+		<td><input class="zerowallet" type="text" value="" style="width: 300px;"/></td>
+		<td><select class="minezero" name="minezero" id="minezero"><option value="NO">NO</option><option value="YES">YES</option></td>
+		<td><input class="minetimezero" type="number" value="" style="width: 50px;"/> hour(s)</td>
+		<td></td>
+	</tr>
+</table>
+<br>
+
+<!-- Donation Setup Table -->
+<table style="border:1px solid black; background-color:#8a8a8a;">
+	<tr>
+		<th align="left">Donation Setup</th>
+		<th aligh="left">(Will mine RVN for 10 minutes at end of cycle)</th>
+	</tr>
+	<tr>
+		<td>Do you want to donate?</td>
+		<td><select class="donate" name="donate" id="donate"><option value="NO">NO</option><option value="YES">YES</option></td>
+	</tr>
+</table>
+<br>
+
+<!-- Timer Setup Table -->
+<table style="border:1px solid black; background-color:#eb8334;">
+	<tr>
+		<th align="left">Before you continue...</th>
+	</tr>
+	<tr>
+		<td>Please consider supporting the creator of DarkHash Easy-Config with a <b>one-time</b> donation of <b>any<b> value!</td>
+	</tr>
+	<tr>
+		<td><b>BTCZ</b>: t1KwK4YNYuRoEbpbrGNtWmjtBNmEkLuu5Tp</td>
+	</tr>
+	<tr>
+		<td><b>LTZ</b>: L1WFb5kqWQXwb7wV5dRUD4Z7amaemZ5ixpt</td>
+	</tr>
+	<tr>
+		<td><b>RVN</b>: RSLgxZh8Duo2bxHMjzKAuMMBZhpuXJeMEm</td>
+	</tr>
+</table>
+<br>
+
+
+
+  
+<!-- Config Output -->
+<br>Here is your generated config.bat:
+<br>
+<table style="border:1px solid black; background-color:#FFFFFF;">
+<tr>
+<td>
+@echo off
+<br>
+<br>:: TIME is in HOURS. If you don't specify a time for a coin, this time will be used
+<br>set SWITCH_EVERY_HOUR=<span class="DelayChoice">1</span>
+<br>:: Set your worker name here. You can enter any name you want, no space or symbols
+<br>set WORKER_NAME=<span class="WorkerName">MyMiningRig</span>
+<br>:: Set this to YES if you're using AMD 
+<br>set USING_AMD=<span class="AmdUser">NO</span>
+<br>:: If you intend on mining BEAM and you have a NVIDIA card with 4G, set to YES 
+<br>set NVIDIA_4GO_CARD=<span class="Nvidia4gbUser">NO</span>
+<br>
+<br>:: BEAM Coin (BEAM)
+<br>set BEAM=<span class="MineBeamChoice">NO</span>
+<br>set BEAM_WALLET=<span class="BeamWalletAddress"></span>
+<br>set BEAM_MINING_TIME=<span class="MineTimeBeam"></span>
+<br>:: BitcoinZ (BTCZ)
+<br>set BTCZ=<span class="MineBitcoinzChoice">NO</span>
+<br>set BTCZ_WALLET=<span class="BitcoinzWalletAddress"></span>
+<br>set BTCZ_MINING_TIME=<span class="MineTimeBitcoinz"></span>
+<br>:: Bitzec (BZC)
+<br>set BZC=<span class="MineBitzecChoice">NO</span>
+<br>set BZC_WALLET=<span class="BitzecWalletAddress"></span>
+<br>set BZC_MINING_TIME=<span class="MineTimeBitzec"></span>
+<br>:: BZEdge (BZE)
+<br>set BZE=<span class="MineBzedgeChoice">NO</span>
+<br>set BZE_WALLET=<span class="BzedgeWalletAddress"></span>
+<br>set BZE_MINING_TIME=<span class="MineTimeBzedge"></span>
+<br>:: Zelcash (FLUX)
+<br>set FLUX=<span class="MineFluxChoice">NO</span>
+<br>set FLUX_WALLET=<span class="FLUXWalletAddress"></span>
+<br>set FLUX_MINING_TIME=<span class="MineTimeFlux"></span>
+<br>:: FOXDCoin (FOXD)
+<br>set FOXD=<span class="MineFoxdcoinChoice">NO</span>
+<br>set FOXD_WALLET=<span class="FoxdWalletAddress"></span>
+<br>set FOXD_MINING_TIME=<span class="MineTimeFoxdcoin"></span>
+<br>:: LitecoinZ (LTZ)
+<br>set LTZ=<span class="MineLitecoinzChoice">NO</span>
+<br>set LTZ_WALLET=<span class="LitecoinzWalletAddress"></span>
+<br>set LTZ_MINING_TIME=<span class="MineTimeLitecoinz"></span>
+<br>:: RavenCoin (RVN)
+<br>set RVN=<span class="MineRavencoinChoice">NO</span>
+<br>set RVN_WALLET=<span class="RavenWalletAddress"></span>
+<br>set RVN_MINING_TIME=<span class="MineTimeRavencoin"></span>
+<br>:: Space Coin (SPACE)
+<br>set SPACE=<span class="MineSpacecoinChoice">NO</span>
+<br>set SPACE_WALLET=<span class="SpaceWalletAddress"></span>
+<br>set SPACE_MINING_TIME=<span class="MineTimeSpacecoin"></span>
+<br>:: Vidulum (VDL)
+<br>set VDL=<span class="MineVidulumChoice">NO</span>
+<br>set VDL_WALLET=<span class="VidulumWalletAddress"></span>
+<br>set VDL_MINING_TIME=<span class="MineTimeVidulum"></span>
+<br>:: Snowgem TENT (XSG)
+<br>set XSG=<span class="MineTentChoice">NO</span>
+<br>set XSG_WALLET=<span class="TentWalletAddress"></span>
+<br>set XSG_MINING_TIME=<span class="MineTimeTent"></span>
+<br>:: Ycash (YEC)
+<br>set YEC=<span class="MineYcashChoice">NO</span>
+<br>set YEC_WALLET=<span class="YcashWalletAddress"></span>
+<br>set YEC_MINING_TIME=<span class="MineTimeYcash"></span>
+<br>:: Z Classic (ZCL)
+<br>set ZCL=<span class="MineZclassicChoice">NO</span>
+<br>set ZCL_WALLET=<span class="ZclassicWalletAddress"></span>
+<br>set ZCL_MINING_TIME=<span class="MineTimeZclassic"></span>
+<br>:: ZERO Coin (ZER)
+<br>set ZER=<span class="MineZeroChoice">NO</span>
+<br>set ZER_WALLET=<span class="ZeroWalletAddress"></span>
+<br>set ZER_MINING_TIME=<span class="MineTimeZero"></span>
+<br>
+<br>:: DONATIONS ARE OFF BY DEFAULT !! NO FEES
+<br>:: DONATE=YES if you want to donate. Thanks!
+<br>set DONATE=<span class="DonateChoice">NO</span>
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+<!-- Input to Output Variable Handling -->
+<script type="text/javascript">
+
+
+
+
+<!-- Beam Setup -->
+var $jsbeamwallet = document.querySelector('.beamwallet');
+var $jsbeamwalletValue = document.querySelector('.BeamWalletAddress');
+$jsbeamwallet.addEventListener('input', function(event){
+  $jsbeamwalletValue.innerHTML = $jsbeamwallet.value;
+}, false);
+
+var $jsminebeam = document.querySelector('.minebeam');
+var $jsminebeamValue = document.querySelector('.MineBeamChoice');
+$jsminebeam.addEventListener('input', function(event){
+  $jsminebeamValue.innerHTML = $jsminebeam.value;
+}, false);
+
+var $jsminetimebeam = document.querySelector('.minetimebeam');
+var $jsminetimebeamValue = document.querySelector('.MineTimeBeam');
+$jsminetimebeam.addEventListener('input', function(event){
+  $jsminetimebeamValue.innerHTML = $jsminetimebeam.value;
+}, false);
+
+
+
+
+<!-- BitcoinZ Setup -->
+var $jsbitcoinzwallet = document.querySelector('.bitcoinzwallet');
+var $jsbitcoinzwalletValue = document.querySelector('.BitcoinzWalletAddress');
+$jsbitcoinzwallet.addEventListener('input', function(event){
+  $jsbitcoinzwalletValue.innerHTML = $jsbitcoinzwallet.value;
+}, false);
+
+var $jsminebitcoinz = document.querySelector('.minebitcoinz');
+var $jsminebitcoinzValue = document.querySelector('.MineBitcoinzChoice');
+$jsminebitcoinz.addEventListener('input', function(event){
+  $jsminebitcoinzValue.innerHTML = $jsminebitcoinz.value;
+}, false);
+
+var $jsminetimebitcoinz = document.querySelector('.minetimebitcoinz');
+var $jsminetimebitcoinzValue = document.querySelector('.MineTimeBitcoinz');
+$jsminetimebitcoinz.addEventListener('input', function(event){
+  $jsminetimebitcoinzValue.innerHTML = $jsminetimebitcoinz.value;
+}, false);
+
+
+
+
+<!-- Bitzec Setup -->
+var $jsbitzecwallet = document.querySelector('.bitzecwallet');
+var $jsbitzecwalletValue = document.querySelector('.BitzecWalletAddress');
+$jsbitzecwallet.addEventListener('input', function(event){
+  $jsbitzecwalletValue.innerHTML = $jsbitzecwallet.value;
+}, false);
+
+var $jsminebitzec = document.querySelector('.minebitzec');
+var $jsminebitzecValue = document.querySelector('.MineBitzecChoice');
+$jsminebitzec.addEventListener('input', function(event){
+  $jsminebitzecValue.innerHTML = $jsminebitzec.value;
+}, false);
+
+var $jsminetimebitzec = document.querySelector('.minetimebitzec');
+var $jsminetimebitzecValue = document.querySelector('.MineTimeBitzec');
+$jsminetimebitzec.addEventListener('input', function(event){
+  $jsminetimebitzecValue.innerHTML = $jsminetimebitzec.value;
+}, false);
+
+
+
+
+<!-- BZEdge Setup -->
+var $jsbzedgewallet = document.querySelector('.bzedgewallet');
+var $jsbzedgewalletValue = document.querySelector('.BzedgeWalletAddress');
+$jsbzedgewallet.addEventListener('input', function(event){
+  $jsbzedgewalletValue.innerHTML = $jsbzedgewallet.value;
+}, false);
+
+var $jsminebzedge = document.querySelector('.minebzedge');
+var $jsminebzedgeValue = document.querySelector('.MineBzedgeChoice');
+$jsminebzedge.addEventListener('input', function(event){
+  $jsminebzedgeValue.innerHTML = $jsminebzedge.value;
+}, false);
+
+var $jsminetimebzedge = document.querySelector('.minetimebzedge');
+var $jsminetimebzedgeValue = document.querySelector('.MineTimeBzedge');
+$jsminetimebzedge.addEventListener('input', function(event){
+  $jsminetimebzedgeValue.innerHTML = $jsminetimebzedge.value;
+}, false);
+
+
+
+
+<!-- Zelcash FLUX Setup -->
+var $jsfluxwallet = document.querySelector('.fluxwallet');
+var $jsfluxwalletValue = document.querySelector('.FLUXWalletAddress');
+$jsfluxwallet.addEventListener('input', function(event){
+  $jsfluxwalletValue.innerHTML = $jsfluxwallet.value;
+}, false);
+
+var $jsmineflux = document.querySelector('.mineflux');
+var $jsminefluxValue = document.querySelector('.MineFluxChoice');
+$jsmineflux.addEventListener('input', function(event){
+  $jsminefluxValue.innerHTML = $jsmineflux.value;
+}, false);
+
+var $jsminetimeflux = document.querySelector('.minetimeflux');
+var $jsminetimefluxValue = document.querySelector('.MineTimeFlux');
+$jsminetimeflux.addEventListener('input', function(event){
+  $jsminetimefluxValue.innerHTML = $jsminetimeflux.value;
+}, false);
+
+
+
+
+<!-- Foxdcoin Setup -->
+var $jsfoxdwallet = document.querySelector('.foxdwallet');
+var $jsfoxdwalletValue = document.querySelector('.FoxdWalletAddress');
+$jsfoxdwallet.addEventListener('input', function(event){
+  $jsfoxdwalletValue.innerHTML = $jsfoxdwallet.value;
+}, false);
+
+var $jsminefoxdcoin = document.querySelector('.minefoxdcoin');
+var $jsminefoxdcoinValue = document.querySelector('.MineFoxdcoinChoice');
+$jsminefoxdcoin.addEventListener('input', function(event){
+  $jsminefoxdcoinValue.innerHTML = $jsminefoxdcoin.value;
+}, false);
+
+var $jsminetimefoxdcoin = document.querySelector('.minetimefoxdcoin');
+var $jsminetimefoxdcoinValue = document.querySelector('.MineTimeFoxdcoin');
+$jsminetimefoxdcoin.addEventListener('input', function(event){
+  $jsminetimefoxdcoinValue.innerHTML = $jsminetimefoxdcoin.value;
+}, false);
+
+
+
+
+<!-- LitecoinZ Setup -->
+var $jslitecoinzwallet = document.querySelector('.litecoinzwallet');
+var $jslitecoinzwalletValue = document.querySelector('.LitecoinzWalletAddress');
+$jslitecoinzwallet.addEventListener('input', function(event){
+  $jslitecoinzwalletValue.innerHTML = $jslitecoinzwallet.value;
+}, false);
+
+var $jsminelitecoinz = document.querySelector('.minelitecoinz');
+var $jsminelitecoinzValue = document.querySelector('.MineLitecoinzChoice');
+$jsminelitecoinz.addEventListener('input', function(event){
+  $jsminelitecoinzValue.innerHTML = $jsminelitecoinz.value;
+}, false);
+
+var $jsminetimelitecoinz = document.querySelector('.minetimelitecoinz');
+var $jsminetimelitecoinzValue = document.querySelector('.MineTimeLitecoinz');
+$jsminetimelitecoinz.addEventListener('input', function(event){
+  $jsminetimelitecoinzValue.innerHTML = $jsminetimelitecoinz.value;
+}, false);
+
+
+
+
+<!-- Ravencoin Setup -->
+var $jsravenwallet = document.querySelector('.ravenwallet');
+var $jsravenwalletValue = document.querySelector('.RavenWalletAddress');
+$jsravenwallet.addEventListener('input', function(event){
+  $jsravenwalletValue.innerHTML = $jsravenwallet.value;
+}, false);
+
+var $jsmineravencoin = document.querySelector('.mineravencoin');
+var $jsmineravencoinValue = document.querySelector('.MineRavencoinChoice');
+$jsmineravencoin.addEventListener('input', function(event){
+  $jsmineravencoinValue.innerHTML = $jsmineravencoin.value;
+}, false);
+
+var $jsminetimeravencoin = document.querySelector('.minetimeravencoin');
+var $jsminetimeravencoinValue = document.querySelector('.MineTimeRavencoin');
+$jsminetimeravencoin.addEventListener('input', function(event){
+  $jsminetimeravencoinValue.innerHTML = $jsminetimeravencoin.value;
+}, false);
+
+
+
+
+<!-- Spacecoin Setup -->
+var $jsspacewallet = document.querySelector('.spacewallet');
+var $jsspacewalletValue = document.querySelector('.SpaceWalletAddress');
+$jsspacewallet.addEventListener('input', function(event){
+  $jsspacewalletValue.innerHTML = $jsspacewallet.value;
+}, false);
+
+var $jsminespacecoin = document.querySelector('.minespacecoin');
+var $jsminespacecoinValue = document.querySelector('.MineSpacecoinChoice');
+$jsminespacecoin.addEventListener('input', function(event){
+  $jsminespacecoinValue.innerHTML = $jsminespacecoin.value;
+}, false);
+
+var $jsminetimespacecoin = document.querySelector('.minetimespacecoin');
+var $jsminetimespacecoinValue = document.querySelector('.MineTimeSpacecoin');
+$jsminetimespacecoin.addEventListener('input', function(event){
+  $jsminetimespacecoinValue.innerHTML = $jsminetimespacecoin.value;
+}, false);
+
+
+
+
+<!-- Vidulum Setup -->
+var $jsvidulumwallet = document.querySelector('.vidulumwallet');
+var $jsvidulumwalletValue = document.querySelector('.VidulumWalletAddress');
+$jsvidulumwallet.addEventListener('input', function(event){
+  $jsvidulumwalletValue.innerHTML = $jsvidulumwallet.value;
+}, false);
+
+var $jsminevidulum = document.querySelector('.minevidulum');
+var $jsminevidulumValue = document.querySelector('.MineVidulumChoice');
+$jsminevidulum.addEventListener('input', function(event){
+  $jsminevidulumValue.innerHTML = $jsminevidulum.value;
+}, false);
+
+var $jsminetimevidulum = document.querySelector('.minetimevidulum');
+var $jsminetimevidulumValue = document.querySelector('.MineTimeVidulum');
+$jsminetimevidulum.addEventListener('input', function(event){
+  $jsminetimevidulumValue.innerHTML = $jsminetimevidulum.value;
+}, false);
+
+
+
+
+<!-- SnowGem TENT Setup -->
+var $jstentwallet = document.querySelector('.tentwallet');
+var $jstentwalletValue = document.querySelector('.TentWalletAddress');
+$jstentwallet.addEventListener('input', function(event){
+  $jstentwalletValue.innerHTML = $jstentwallet.value;
+}, false);
+
+var $jsminetent = document.querySelector('.minetent');
+var $jsminetentValue = document.querySelector('.MineTentChoice');
+$jsminetent.addEventListener('input', function(event){
+  $jsminetentValue.innerHTML = $jsminetent.value;
+}, false);
+
+var $jsminetimetent = document.querySelector('.minetimetent');
+var $jsminetimetentValue = document.querySelector('.MineTimeTent');
+$jsminetimetent.addEventListener('input', function(event){
+  $jsminetimetentValue.innerHTML = $jsminetimetent.value;
+}, false);
+
+
+
+
+<!-- Ycash Setup -->
+var $jsycashwallet = document.querySelector('.ycashwallet');
+var $jsycashwalletValue = document.querySelector('.YcashWalletAddress');
+$jsycashwallet.addEventListener('input', function(event){
+  $jsycashwalletValue.innerHTML = $jsycashwallet.value;
+}, false);
+
+var $jsmineycash = document.querySelector('.mineycash');
+var $jsmineycashValue = document.querySelector('.MineYcashChoice');
+$jsmineycash.addEventListener('input', function(event){
+  $jsmineycashValue.innerHTML = $jsmineycash.value;
+}, false);
+
+var $jsminetimeycash = document.querySelector('.minetimeycash');
+var $jsminetimeycashValue = document.querySelector('.MineTimeYcash');
+$jsminetimeycash.addEventListener('input', function(event){
+  $jsminetimeycashValue.innerHTML = $jsminetimeycash.value;
+}, false);
+
+
+
+
+<!-- ZClassic Setup -->
+var $jszclassicwallet = document.querySelector('.zclassicwallet');
+var $jszclassicwalletValue = document.querySelector('.ZclassicWalletAddress');
+$jszclassicwallet.addEventListener('input', function(event){
+  $jszclassicwalletValue.innerHTML = $jszclassicwallet.value;
+}, false);
+
+var $jsminezclassic = document.querySelector('.minezclassic');
+var $jsminezclassicValue = document.querySelector('.MineZclassicChoice');
+$jsminezclassic.addEventListener('input', function(event){
+  $jsminezclassicValue.innerHTML = $jsminezclassic.value;
+}, false);
+
+var $jsminetimezclassic = document.querySelector('.minetimezclassic');
+var $jsminetimezclassicValue = document.querySelector('.MineTimeZclassic');
+$jsminetimezclassic.addEventListener('input', function(event){
+  $jsminetimezclassicValue.innerHTML = $jsminetimezclassic.value;
+}, false);
+
+
+
+
+<!-- Zero Setup -->
+var $jszerowallet = document.querySelector('.zerowallet');
+var $jszerowalletValue = document.querySelector('.ZeroWalletAddress');
+$jszerowallet.addEventListener('input', function(event){
+  $jszerowalletValue.innerHTML = $jszerowallet.value;
+}, false);
+
+var $jsminezero = document.querySelector('.minezero');
+var $jsminezeroValue = document.querySelector('.MineZeroChoice');
+$jsminezero.addEventListener('input', function(event){
+  $jsminezeroValue.innerHTML = $jsminezero.value;
+}, false);
+
+var $jsminetimezero = document.querySelector('.minetimezero');
+var $jsminetimezeroValue = document.querySelector('.MineTimeZero');
+$jsminetimezero.addEventListener('input', function(event){
+  $jsminetimezeroValue.innerHTML = $jsminetimezero.value;
+}, false);
+
+
+
+
+<!-- Default Delay Timer Switch Setup -->
+var $jsdelay = document.querySelector('.delay');
+var $jsdelayValue = document.querySelector('.DelayChoice');
+$jsdelay.addEventListener('input', function(event){
+  $jsdelayValue.innerHTML = $jsdelay.value;
+}, false);
+
+
+
+<!-- Worker Name Setup -->
+var $jsworker = document.querySelector('.worker');
+var $jsworkerValue = document.querySelector('.WorkerName');
+$jsworker.addEventListener('input', function(event){
+  $jsworkerValue.innerHTML = $jsworker.value;
+}, false);
+
+
+
+<!-- AMD User Setup -->
+var $jsamduser = document.querySelector('.amduser');
+var $jsamduserValue = document.querySelector('.AmdUser');
+$jsamduser.addEventListener('input', function(event){
+  $jsamduserValue.innerHTML = $jsamduser.value;
+}, false);
+
+
+
+
+<!-- NVIDIA User Setup -->
+var $jsnvidia4gb = document.querySelector('.nvidia4gb');
+var $jsnvidia4gbValue = document.querySelector('.Nvidia4gbUser');
+$jsnvidia4gb.addEventListener('input', function(event){
+  $jsnvidia4gbValue.innerHTML = $jsnvidia4gb.value;
+}, false);
+
+
+
+
+<!-- Donation Setup -->
+var $jsdonate = document.querySelector('.donate');
+var $jsdonateValue = document.querySelector('.DonateChoice');
+$jsdonate.addEventListener('input', function(event){
+  $jsdonateValue.innerHTML = $jsdonate.value;
+}, false);
+
+
+</script>
+
+</body>
+</html>
